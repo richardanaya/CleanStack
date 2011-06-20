@@ -1,1 +1,4 @@
 This is CleanStack for NodeJS
+
+Dependencies:
+npm install express
