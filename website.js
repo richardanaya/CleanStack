@@ -2,18 +2,18 @@ var express = require('express');
 var model = require('./model');
 var util = require('./lib/util');
 
-var app = express.createServer();
+var server = express.createServer();
 
-app.configure( 
+server.configure( 
     function() {
-	app.use(express.static(__dirname + '/root/'));
+	server.use(express.static(__dirname + '/root/'));
     }
 );
 
-app.get(/^.*$/, 
+server.get(/^.*$/, 
     function(req, res) {
 	util.render(res,'index.html', {name:'Richard'});
     }
 );
 
-app.listen(9999);
+server.listen(9999);
