@@ -2,8 +2,6 @@ var express = require('express');
 var model = require('./model');
 var util = require('./lib/util');
 
-model.connect('mongodb://user:password@abc.com:9999/Database');
-
 var app = express.createServer();
 
 app.configure( 
@@ -14,7 +12,7 @@ app.configure(
 
 app.get(/^.*$/, 
     function(req, res) {
-	util.render(res,'index.html');
+	util.render(res,'index.html', {name:'Richard'});
     }
 );
 

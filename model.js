@@ -1,4 +1,6 @@
-var mongoose = require('mongoose');
+/*var mongoose = require('mongoose');
+
+model.connect('mongodb://user:password@abc.com:9999/Database');
 
 var Person = new mongoose.Schema({
     first     : String
@@ -13,3 +15,4 @@ var connect = function(url) {
 
 exports.connect = connect;
 exports.PersonModel = PersonModel;
+*/
