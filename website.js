@@ -2,6 +2,7 @@ var express = require('express');
 var model = require('./model');
 var util = require('./lib/util');
 
+var port = process.env.PORT || 3000;
 var server = express.createServer();
 
 server.configure( 
@@ -12,8 +13,8 @@ server.configure(
 
 server.get(/^.*$/, 
     function(req, res) {
-	util.render(res,'index.html', {name:'Richard'});
+	res.redirect('/index.html');
     }
 );
 
-server.listen(9999);
+server.listen(port);
