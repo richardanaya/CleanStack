@@ -11,6 +11,12 @@ server.configure(
     }
 );
 
+server.get('/favicon.ico',
+    function(req, res) {
+        res.redirect('/images/favicon.ico');
+    }
+);
+
 server.get(/^.*$/, 
     function(req, res) {
 	res.redirect('/index.html');
