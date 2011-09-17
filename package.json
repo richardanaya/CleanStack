@@ -1,10 +1,9 @@
 {
-  "name": "node-google-payments-example",
+  "name": "cleanstack-nodejs",
   "version": "0.0.1",
   "dependencies": {
-    "express": "2.4.6",
-    "openid": "0.3.1",
-    "gravatar": "1.0.2",
-    "mongodb": "0.9.6-13"
+    "express": "latest",
+    "mustache": "latest",
+    "mongodb": "latest"
   }
 }

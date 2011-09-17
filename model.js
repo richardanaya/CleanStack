@@ -1,18 +1,7 @@
-/*var mongoose = require('mongoose');
+var mongo = require('mongodb');
 
-model.connect('mongodb://user:password@abc.com:9999/Database');
+var CONNECTION_URL = 'mongodb://user:pass@host:port/db_name';
 
-var Person = new mongoose.Schema({
-    first     : String
-  , last      : String
+mongo.connect(CONNECTION_URL, function(err, db) {
+
 });
-mongoose.model('Person',Person);
-var PersonModel = mongoose.model('Person');
-
-var connect = function(url) {
-    mongoose.connect(url);
-}
-
-exports.connect = connect;
-exports.PersonModel = PersonModel;
-*/

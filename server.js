@@ -1,13 +1,12 @@
 var express = require('express');
-var model = require('./model');
 var util = require('./lib/util');
 
-var port = process.env.PORT || 3000;
+var port = process.env.PORT || 9999;
 var server = express.createServer();
 
 server.configure( 
     function() {
-	server.use(express.static(__dirname + '/root/'));
+	server.use(express.static(__dirname + '/static/'));
     }
 );
 
