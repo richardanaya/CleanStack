@@ -1,14 +1,7 @@
-var express = require('express');
 var util = require('./lib/util');
 
 var port = process.env.PORT || 9999;
-var server = express.createServer();
-
-server.configure( 
-    function() {
-	server.use(express.static(__dirname + '/static/'));
-    }
-);
+var server = util.configureServer();
 
 server.get('/favicon.ico',
     function(req, res) {
@@ -16,9 +9,13 @@ server.get('/favicon.ico',
     }
 );
 
-server.get(/^.*$/, 
+server.get(/^.*$/,
     function(req, res) {
-	res.redirect('/index.html');
+        res.render("index.html", {
+            locals: {
+                name: "Richard"
+            }
+        });
     }
 );
 
