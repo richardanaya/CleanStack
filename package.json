@@ -1,9 +1,14 @@
 {
   "name": "cleanstack-nodejs",
-  "version": "0.0.1",
+  "version": "0.0.1-2",
   "dependencies": {
     "express": "latest",
     "jinjs": "latest",
-    "mongodb": "latest"
+    "mongodb": "latest",
+    "pwilang": "latest"
+  },
+  "subdomain": "sandbox",
+  "scripts": {
+    "start": "server.js"
   }
 }
