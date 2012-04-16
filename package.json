@@ -2,7 +2,7 @@
   "name": "cleanstack-nodejs",
   "version": "0.0.1-2",
   "dependencies": {
-    "express": "latest",
+    "express": "2.5.9",
     "jinjs": "latest",
     "mongodb": "latest",
     "pwilang": "latest"
