@@ -1,17 +1,31 @@
-var util = require('./lib/util');
+var express = require('express');
+
+var authorize = function (username, password) {
+    //UNCOMMENT THIS LINE IF YOU WANT A PASSWORD PROTECTED SITE
+    //return 'someone' === username & 'password' === password;
+    return true;
+};
+
+var configureServer = function() {
+    var server = express.createServer(
+        express.basicAuth(authorize)
+    );
+
+    server.configure(
+        function() {
+            //any static file from the static directory, just return it to user if requested
+            server.use(express.static(__dirname + '/public/'));
+        }
+    );
+    return server;
+};
 
 var port = process.env.PORT || 9999;
-var server = util.configureServer();
-
-server.get('/favicon.ico',
-    function (req, res) {
-        res.redirect('/img/favicon.ico');
-    }
-);
+var server = configureServer();
 
 server.get(/^.*$/,
     function (req, res) {
-        res.render('index.jinjs', { name:"Richard" });
+        res.redirect("index.html");
     }
 );
 
