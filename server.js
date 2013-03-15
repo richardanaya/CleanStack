@@ -8,7 +8,8 @@ var authorize = function (username, password) {
 
 var configureServer = function() {
     var server = express.createServer(
-        express.basicAuth(authorize)
+        //Uncomment this line for authorization
+        //express.basicAuth(authorize)
     );
 
     server.configure(
@@ -23,6 +24,7 @@ var configureServer = function() {
 var port = process.env.PORT || 9999;
 var server = configureServer();
 
+//Catch every url call and redirect to index.html
 server.get(/^.*$/,
     function (req, res) {
         res.redirect("index.html");
@@ -30,3 +32,4 @@ server.get(/^.*$/,
 );
 
 server.listen(port);
+console.log("listening on port "+port);
